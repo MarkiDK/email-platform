@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emailsiden - Din sikre og brugervenlige email-tjeneste">
+  <meta name="keywords" content="email, mail, sikker mail, dansk email, emailsiden">
+  
+  <!-- Favicon og app ikoner -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Primary Meta Tags -->
+  <title>Emailsiden - Sikker og brugervenlig email</title>
+  <meta name="title" content="Emailsiden - Sikker og brugervenlig email">
+  <meta name="description" content="Send og modtag emails sikkert med din @emailsiden.dk adresse. Moderne design og brugervenlig oplevelse.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emailsiden.dk/">
+  <meta property="og:title" content="Emailsiden - Sikker og brugervenlig email">
+  <meta property="og:description" content="Send og modtag emails sikkert med din @emailsiden.dk adresse. Moderne design og brugervenlig oplevelse.">
+  <meta property="og:image" content="https://emailsiden.dk/social-preview.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://emailsiden.dk/">
+  <meta property="twitter:title" content="Emailsiden - Sikker og brugervenlig email">
+  <meta property="twitter:description" content="Send og modtag emails sikkert med din @emailsiden.dk adresse. Moderne design og brugervenlig oplevelse.">
+  <meta property="twitter:image" content="https://emailsiden.dk/social-preview.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link href="/styles/tailwind.css" rel="stylesheet">
+  
+  <!-- Preload kritiske assets -->
+  <link rel="preload" href="/assets/images/logo.svg" as="image">
+  
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.emailsiden.dk;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+</head>
+<body class="bg-gray-50 antialiased">
+  <noscript>
+    <div class="flex items-center justify-center min-h-screen p-4 text-center">
+      <div class="bg-white p-8 rounded-lg shadow-lg max-w-md">
+        <h1 class="text-2xl font-bold text-gray-900 mb-4">JavaScript er påkrævet</h1>
+        <p class="text-gray-600">
+          For at bruge Emailsiden skal du aktivere JavaScript i din browser.
+          Dette er nødvendigt for at sikre den bedste og mest sikre oplevelse.
+        </p>
+      </div>
+    </div>
+  </noscript>
+  
+  <div id="root"></div>
+  
+  <!-- App loading state -->
+  <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div class="flex flex-col items-center">
+      <img src="/assets/images/logo.svg" alt="Emailsiden logo" class="w-16 h-16 mb-4">
+      <div class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  </div>
+  
+  <!-- App scripts -->
+  <script type="module" src="/src/index.tsx"></script>
+  
+  <!-- Error boundary fallback -->
+  <div id="error-boundary" style="display: none;">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-white p-8 rounded-lg shadow-lg max-w-md text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Ups! Noget gik galt</h2>
+        <p class="text-gray-600 mb-4">
+          Der opstod en fejl. Prøv at genindlæse siden eller kontakt support hvis problemet fortsætter.
+        </p>
+        <button 
+          onclick="window.location.reload()" 
+          class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Genindlæs siden
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
